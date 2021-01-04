@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 70%;
+    height: auto;
+}
+
+.outer-container {
+    display: flex;
+}
+
+
+/* code */
+
+.code-section {
+    flex-basis: 50%;
+    height: 100vh;
+    background-color:#8FBC8F;
+}
+
+.inner-container {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.inner-container h1 {
+    font-size: 45px;
+    font-family: 'Archivo', sans-serif;
+    color: #1e6262;
+}
+
+.inner-container p {
+    margin-top: 20px;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+
+.code-syntax {
+    padding: 6px;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #161b22;
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+    word-break: normal;
+    white-space: pre;
+    font-size: 16px;
+    border: 0;
+}
+
+
+
+/* code editor chunks */
+
+.code-editor {
+    margin-top: 40px;
+    width: 90%;
+    background-color: #1a1b26;
+    padding: 20px;
+    border-left: 20px solid #16161e;
+    height: 40vh;
+}
+
+.existing-code {
+    color:#70a958;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.period {
+    color: #c18358;
+}
+
+.braces {
+    color: #7892b4;
+}
+
+.css-property {
+    color:#4b8bd5;
+}
+
+.css-value {
+    color: #c27b54;
+}
+
+.code-indent {
+    display: block;
+    text-indent: 50px;
+}
+
+
+textarea {
+    width: calc(100% - 80px);
+    outline-style: none;
+    outline-color: white;
+    resize: none;
+    font-size: 16px;
+    overflow: auto;
+    font-family: 'Source Code Pro', monospace;
+}
+
+textarea:focus {
+    background:#303030;
+    color: #fff;
+}
+
+
+.submit-btn, .reset-btn, .next-btn {
+    width: 20%;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background-color: #191970;
+    background-color: #112f91;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.reset-btn {
+    background-color:#e84a5f;
+}
+
+.next-btn {
+    background-color: #0e9577;
+}
+
+.submit-btn:hover {
+    background-color: #1b7fbd;
+}
+
+.reset-btn:hover {
+    background-color: #ff847c;
+}
+
+.next-btn:hover {
+    background-color: #47d6b6;
+}
+
+
+/* display graphics section */
+
+.game-section {
+    flex-basis: 50%;
+    height: 100vh;
+    background-color: #F4A460;
+    background-color: #C19A6B;
+}
+
+.camel {
+    position: absolute;
+    z-index: 2;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+}
+
+.water {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
