@@ -94,7 +94,7 @@ submitBtn.addEventListener('click', () => {
     }
 })
 
-resetBtn.addEventListener('click', () => resetState())
+resetBtn.addEventListener('click', resetState)
 
 
 
