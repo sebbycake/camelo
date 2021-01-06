@@ -14,12 +14,15 @@ img {
     height: auto;
 }
 
-.outer-container {
-    display: flex;
-}
 
 .hide {
     display: none;
+}
+
+.error-msg {
+    background-color:#F08080;
+    padding: 10px 20px;
+    width: 90%;
 }
  
 /* code */
@@ -31,8 +34,8 @@ img {
 }
 
 .inner-container {
-    margin-top: 20px;
     margin-left: 20px;
+    width: 85%;
 }
 
 .inner-container h1 {
@@ -47,11 +50,12 @@ img {
     font-family: 'Lato', sans-serif;
 }
 
-.code-syntax {
+code {
     padding: 6px;
     border-radius: 6px;
     color: #fff;
     background-color: #161b22;
+    background-color: #484f58;
     font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
     word-break: normal;
     white-space: pre;
@@ -64,12 +68,12 @@ img {
 /* code editor chunks */
 
 .code-editor {
-    margin-top: 40px;
-    width: 90%;
+    margin-top: 25px;
+    width: 95%;
     background-color: #1a1b26;
     padding: 20px;
     border-left: 20px solid #16161e;
-    height: 40vh;
+    height: 45vh;
 }
 
 .existing-code {
@@ -119,9 +123,10 @@ textarea:focus {
     background: #1e202e;
 }
 
+/* submit button */
 
-.submit-btn, .reset-btn, .next-btn, .prev-btn {
-    width: 20%;
+.submit-btn, .reset-btn, .next-btn, .prev-btn, .restart-btn {
+    width: 40%;
     padding: 10px;
     cursor: pointer;
     border: none;
@@ -133,35 +138,51 @@ textarea:focus {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     margin-top: 10px;
-    margin: 4px;
-}
-
-.reset-btn {
-    background-color:#e84a5f;
-}
-
-.next-btn {
-    background-color: #0e9577;
-}
-
-.prev-btn {
-    background-color: #ff8a5c;
+    margin-right: 4px;
 }
 
 .submit-btn:hover {
     background-color: #1b7fbd;
 }
 
+/* reset button */
+
+.reset-btn {
+    background-color:#e84a5f;
+}
+
 .reset-btn:hover {
     background-color: #ff847c;
+}
+
+/* next button */
+
+.next-btn {
+    background-color: #0e9577;
 }
 
 .next-btn:hover {
     background-color: #17b978;
 }
 
+/* previous button */
+
+.prev-btn {
+    background-color: #ff8a5c;
+}
+
 .prev-btn:hover {
     background-color: #feb062;
+}
+
+/* restart button */
+
+.restart-btn {
+    background-color: #574b90;
+}
+
+.restart-btn:hover {
+    background-color: #775ada;
 }
 
 
@@ -215,3 +236,22 @@ textarea:focus {
     align-items: flex-end; 
 }
 
+
+
+@media (min-width:468px) {
+
+    .outer-container {
+        display: flex;
+    }
+
+    .inner-container {
+        margin-top: 20px;
+        width: 90%;
+    }
+
+    .submit-btn, .reset-btn, .next-btn, .prev-btn {
+        width: 20%;
+        margin-top: 20px;
+    }
+    
+}

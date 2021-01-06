@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>camelo - Learn CSS properties</title>
+    <title>Camelo - Learn CSS Properties</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <meta property="og:url" content="https://camelo.netlify.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="camelo">
+    <meta property="og:description" content="A gamified platform to learn CSS properties">
+    <meta property="og:image" content="">
     <link rel="stylesheet" href="style.css">
-    <script src="app.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/app.js" defer></script>
 </head>
 
 <body>
@@ -14,7 +21,7 @@
 
         <div class="code-section">
             <div class="inner-container">
-                <h1>camelo</h1>
+                <h1>Camelo</h1>
                 <p id="storyline">
                     Cathy the Camel has been walking along Flaming Desert for the past four hours...
                 </p>
@@ -25,16 +32,17 @@
                     In this task, we will be using Flexbox properties.
                 </p>
                 <p id="hint">
-                    Hint: Experiment with <span class="code-syntax">justify-content</span> and <span
-                        class="code-syntax">align-items</span> !
+                    Hint: Experiment with <code>justify-content</code> and <code>align-items</code> !
                 </p>
+                <p class="error-msg hide">Error: Please enter some CSS code!</p>
                 <div class="code-editor">
                     <span class="existing-code"><span class="period">.</span>camel <span class="braces">{</span></span>
-                    <span class="existing-code code-indent css-property">display: <span class="css-value">flex</span>;</span>
-                        <form class="code-indent">
-                            <textarea class="src-code" name="src-code" id="" cols="30" rows="2"
+                    <span class="existing-code code-indent css-property">display: <span
+                            class="css-value">flex</span>;</span>
+                    <form class="code-indent">
+                        <textarea class="src-code" name="src-code" id="" cols="30" rows="2"
                             placeholder="Enter CSS code here"></textarea>
-                        </form>
+                    </form>
                     <span class="existing-code"><span class="braces">}</span></span>
                     </p>
                     <button class="submit-btn">Run Code</button>
