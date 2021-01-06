@@ -6,55 +6,35 @@ const resetBtn = document.querySelector('.reset-btn')
 
 const nextBtn = document.querySelector('.next-btn')
 
+const hintBtn = document.querySelector('.hint-btn')
+
 let currentTaskIndex = 0;
 
 
 // functions ---------------------------------------------
 
-function combineStyles(array) {
-    let styles = ''
-    array.forEach(style => { styles += style + ' ' });
-    return styles
-}
-
-
 function resetState() {
     // reset camel's inline styles
     camel.setAttribute('style', '');
-    const src_code = document.querySelector('.src-code')
-    // clear the textbox
-    src_code.value = ""
-    // remove error msg if any
-    removeErrorMsg()
+    // clear existing code by user
+    const defaultCode = ".camel { \n    display: flex \n    /* Enter CSS Code Below */\n}"
+    editor.setValue(defaultCode);
 }
 
+function getStyles(stylesArray) {
+    let styles = ''
+    // i = 0 to 2 is the default style displayed
+    // the last item is the closing curly braces
+    for (let i = 3; i < stylesArray.length - 1; i++) {
+        styles += stylesArray[i].trim() + ' '
+    }
+    return styles
+}
 
 function runCSSCode() {
-    // obtain user input css code
-    const src_code = document.querySelector('.src-code').value
-    if (src_code.length >= 1) {
-        const src_code_array = src_code.split('\n')
-        // combine them together
-        const stylesString = combineStyles(src_code_array);
-        // set style attribute
-        camel.setAttribute('style', stylesString)
-    } else {
-        // display error msg
-        displayErrorMsg()
-    }
-}
-
-
-function displayErrorMsg() {
-    const errorMsg = document.querySelector('.error-msg')
-    errorMsg.classList.remove('hide')
-}
-
-
-function removeErrorMsg() {
-    // remove error msg
-    const errorMsg = document.querySelector('.error-msg')
-    errorMsg.classList.add('hide')
+    const srcCodeArray = editor.getValue().trim().split("\n")
+    const stylesString = getStyles(srcCodeArray)
+    camel.setAttribute('style', stylesString)
 }
 
 
@@ -64,12 +44,12 @@ function setNextTask(data) {
     resetState()
 
     const storyline = document.getElementById('storyline')
-    const task = document.getElementById('task')
+    const challenge = document.getElementById('challenge')
     const property = document.getElementById('property')
     const hint = document.getElementById('hint')
 
     storyline.innerText = data.storyline
-    task.innerHTML = data.task
+    challenge.innerHTML = data.challenge
     property.innerText = data.property
     hint.innerHTML = data.hint
 
@@ -104,8 +84,8 @@ function displayPrevBtn() {
             const prevBtn = document.createElement('button')
             prevBtn.classList.add('prev-btn')
             prevBtn.innerText = 'Previous'
-            const codeEditor = document.querySelector('.code-editor')
-            codeEditor.append(prevBtn)
+            const innerContainer = document.querySelector('.inner-container')
+            innerContainer.append(prevBtn)
 
             prevBtn.addEventListener('click', () => {
                 currentTaskIndex--
@@ -134,8 +114,8 @@ function displayRestartBtn() {
     const restartBtn = document.createElement('button')
     restartBtn.classList.add('restart-btn')
     restartBtn.innerText = 'Restart Game'
-    const codeEditor = document.querySelector('.code-editor')
-    codeEditor.append(restartBtn)
+    const innerContainer = document.querySelector('.inner-container')
+    innerContainer.append(restartBtn)
 
     // add eventlistener
     restartBtn.addEventListener('click', () => {
@@ -184,10 +164,13 @@ nextBtn.addEventListener('click', () => {
 submitBtn.addEventListener('click', () => {
     // reset previous style attribute
     camel.setAttribute('style', '')
-    // remove error msg if any
-    removeErrorMsg()
     // run CSS code
     runCSSCode()
 })
 
 resetBtn.addEventListener('click', resetState)
+
+hintBtn.addEventListener('click', () => {
+    const hint = document.querySelector('#hint')
+    hint.classList.toggle('hide')
+})

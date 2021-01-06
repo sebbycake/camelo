@@ -25,30 +25,24 @@
                 <p id="storyline">
                     Cathy the Camel has been walking along Flaming Desert for the past four hours...
                 </p>
-                <p id="task">
-                    <strong>Task 1: </strong>Bring Cathy the Camel to the puddle of water to quench its thirst!
+                <p id="challenge">
+                    <strong>Challenge 1: </strong>Bring Cathy the Camel to the puddle of water to quench its thirst!
                 </p>
                 <p id="property">
-                    In this task, we will be using Flexbox properties.
+                    In this challenge, we will be using Flexbox properties.
                 </p>
-                <p id="hint">
-                    Hint: Experiment with <code>justify-content</code> and <code>align-items</code> !
+                <button class="hint-btn">Hint</button>
+                <p id="hint" class="hide">
+                    Experiment with <code>justify-content</code> and <code>align-items</code> !
                 </p>
-                <p class="error-msg hide">Error: Please enter some CSS code!</p>
-                <div class="code-editor">
-                    <span class="existing-code"><span class="period">.</span>camel <span class="braces">{</span></span>
-                    <span class="existing-code code-indent css-property">display: <span
-                            class="css-value">flex</span>;</span>
-                    <form class="code-indent">
-                        <textarea class="src-code" name="src-code" id="" cols="30" rows="2"
-                            placeholder="Enter CSS code here"></textarea>
-                    </form>
-                    <span class="existing-code"><span class="braces">}</span></span>
-                    </p>
-                    <button class="submit-btn">Run Code</button>
-                    <button class="reset-btn">Reset</button>
-                    <button class="next-btn">Next</button>
-                </div>
+<div id="editor">.camel {
+    display: flex;
+    /* Enter CSS Code Below */      
+}
+</div>
+                <button class="submit-btn">Run Code</button>
+                <button class="reset-btn">Reset Code</button>
+                <button class="next-btn">Next</button>
             </div>
         </div> <!-- end of code section-->
 
@@ -66,6 +60,18 @@
         </div> <!-- end of game section-->
 
     </div> <!-- end of outer container-->
+
+    <!-- embed Ace code editor -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript"
+        charset="utf-8"></script>
+    <script>
+        const editor = ace.edit("editor");
+        // editor.setTheme("ace/theme/pastel_on_dark");
+        // editor.setTheme("ace/theme/terminal");
+        editor.setTheme("ace/theme/tomorrow_night");
+        // editor.setTheme("ace/theme/monokai")
+        editor.session.setMode("ace/mode/css");
+    </script>
 
 </body>
 

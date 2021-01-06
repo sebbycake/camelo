@@ -19,12 +19,7 @@ img {
     display: none;
 }
 
-.error-msg {
-    background-color:#F08080;
-    padding: 10px 20px;
-    width: 90%;
-}
- 
+
 /* code */
 
 .code-section {
@@ -50,6 +45,10 @@ img {
     font-family: 'Lato', sans-serif;
 }
 
+#hint {
+    animation: fadeIn 0.5s ease-in;
+}
+
 code {
     padding: 6px;
     border-radius: 6px;
@@ -59,7 +58,7 @@ code {
     font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
     word-break: normal;
     white-space: pre;
-    font-size: 16px;
+    font-size: 14px;
     border: 0;
 }
 
@@ -67,60 +66,11 @@ code {
 
 /* code editor chunks */
 
-.code-editor {
-    margin-top: 25px;
-    width: 95%;
-    background-color: #1a1b26;
-    padding: 20px;
-    border-left: 20px solid #16161e;
-    height: 45vh;
-}
-
-.existing-code {
-    color:#70a958;
-    font-family: 'Source Code Pro', monospace;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-.period {
-    color: #c18358;
-}
-
-.braces {
-    color: #7892b4;
-}
-
-.css-property {
-    color:#4b8bd5;
-}
-
-.css-value {
-    color: #c27b54;
-}
-
-.code-indent {
-    display: block;
-    text-indent: 35px;
-} 
-
-
-
-textarea {
-    width: calc(100% - 80px);
-    outline-style: none;
-    resize: none;
-    font-size: 16px;
-    overflow: auto;
-    font-family: 'Source Code Pro', monospace;
-    background-color:  #1a1b26;
-    border:  #1a1b26;
-    color: #4b8bd5;
-    
-}
-
-textarea:focus {
-    background: #1e202e;
+#editor {
+    margin-top: 20px;
+    width: 100%;
+    height: 40vh;
+    font-size: 15px;
 }
 
 /* submit button */
@@ -186,6 +136,25 @@ textarea:focus {
 }
 
 
+/* hint button */
+
+.hint-btn {
+    background-color: #696969;
+    border: none;
+    padding: 5px 2px;
+    font-size: 16px;
+    width: 15%;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    margin-top: 20px;
+}
+
+.hint-btn:hover {
+    background-color: grey;
+}
+
 /* display graphics section */
 
 .game-section {
@@ -202,6 +171,10 @@ textarea:focus {
     height: 100vh;
     display: flex;
 }
+
+
+
+/* graphics */
 
 .water {
     width: 100%;
@@ -236,7 +209,10 @@ textarea:focus {
     align-items: flex-end; 
 }
 
-
+@keyframes fadeIn {
+    from { opacity: 0 }
+    to { opacity: 1 }
+}
 
 @media (min-width:468px) {
 
