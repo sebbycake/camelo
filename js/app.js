@@ -17,6 +17,8 @@ function resetState() {
     // reset camel's inline styles
     camel.setAttribute('style', '');
     // clear existing code by user
+    const defaultCode = ".camel { \n    /* Enter CSS Code Below */\n}"
+    editor.setValue(defaultCode);
 }
 
 function getStyles(stylesArray) {
@@ -31,7 +33,15 @@ function getStyles(stylesArray) {
 function runCSSCode() {
     const srcCodeArray = editor.getValue().trim().split("\n")
     const stylesString = getStyles(srcCodeArray)
-    camel.setAttribute('style', stylesString)
+    if (currentTaskIndex === 1) {
+        const gameSection = document.querySelector('.game-section')
+        gameSection.setAttribute('style', stylesString)
+    } else if (currentTaskIndex === 4) {
+        const camelImg = document.querySelector('.baby-camel-img')
+        camelImg.setAttribute('style', stylesString)
+    } else {
+        camel.setAttribute('style', stylesString)
+    }
 }
 
 
@@ -46,9 +56,7 @@ function setNextTask(data) {
 
     // change the class of the camel
     const camelDiv = document.querySelector('.game-section').children[0]
-    const currentClass = camelDiv.classList[0]
-    camelDiv.classList.remove(currentClass)
-    camelDiv.classList.add(data.className)
+    camelDiv.setAttribute('class', data.className)
 
     const newCamel = document.querySelector(`.${data.className}`)
 
@@ -66,9 +74,7 @@ function setNextGraphics(data) {
     const newImg = `./images/${data.imgFile}`
     img.setAttribute('src', newImg)
     const outerContainer = img.parentElement.parentElement
-    const currentClass = outerContainer.classList[0]
-    outerContainer.classList.remove(currentClass)
-    outerContainer.classList.add(data.className)
+    outerContainer.setAttribute('class', data.className)
 }
 
 
@@ -154,9 +160,9 @@ function restartGame() {
 function changeBackgroundColor() {
     const gameSection = document.querySelector('.game-section')
     if (currentTaskIndex >= 2) {
-        gameSection.style.backgroundColor = "#C19A6B"
+        gameSection.style.background = "linear-gradient(to left, rgb(255, 126, 95), rgb(254, 180, 123))"
     } else {
-        gameSection.style.backgroundColor = "#000000"
+        gameSection.style.background = "linear-gradient(to left, rgb(0, 0, 0), rgb(67, 67, 67))"
     }
 }
 
@@ -168,9 +174,11 @@ function removeHint() {
 }
 
 
+
 // --------------------------------------------- event listeners 
 
 nextBtn.addEventListener('click', () => {
+    resetState()
     currentTaskIndex++
     // last item in the array
     if (currentTaskIndex === tasksArray.length - 1) {

@@ -32,7 +32,7 @@
 /* build here shelter */
 .build-shelter {
     display: block;
-    padding-right: 200px;
+    padding-right: 100px;
     box-sizing: border-box;
     /* border: 10px solid yellow; */
 }
@@ -40,7 +40,7 @@
 
 .display-grown-up-camel {
     display: block;
-    padding-right: 200px;
+    padding-right: 100px;
     box-sizing: border-box;
 }
 
@@ -92,6 +92,10 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end; 
+}
+
+.wolf {
+    
 }
 
 .tent {
