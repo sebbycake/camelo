@@ -1,0 +1,87 @@
+/* baby camel */
+
+.display-camel {
+    width: 50%;  
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: honeydew;
+}
+
+.open-eyes {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-camel img {
+    width: 120px;
+    height: 120px;
+}
+
+.walk-right {
+
+}
+
+.build-shelter {
+
+}
+
+.display-grown-up-camel {
+
+}
+
+
+
+
+
+
+
+/* GROWN UP CAMEL */
+
+
+/* display: flex */
+
+.camel {
+    position: absolute;
+    z-index: 2;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+}
+
+.puddle {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+
+.grass {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end; 
+}
+
+.camel2 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end; 
+}
+
+.tent {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+}
