@@ -14,7 +14,6 @@ img {
     height: auto;
 }
 
-
 .hide {
     display: none;
 }
@@ -160,8 +159,8 @@ code {
 .game-section {
     flex-basis: 50%;
     height: 100vh;
-    background-color: #F4A460;
     background-color: #C19A6B;
+    background-color: #282828;
 }
 
 

@@ -1,4 +1,4 @@
-const camel = document.querySelector('.camel');
+let camel = document.querySelector('.display-camel')
 
 const submitBtn = document.querySelector('.submit-btn')
 
@@ -17,15 +17,12 @@ function resetState() {
     // reset camel's inline styles
     camel.setAttribute('style', '');
     // clear existing code by user
-    const defaultCode = ".camel { \n    display: flex \n    /* Enter CSS Code Below */\n}"
-    editor.setValue(defaultCode);
 }
 
 function getStyles(stylesArray) {
     let styles = ''
-    // i = 0 to 2 is the default style displayed
-    // the last item is the closing curly braces
-    for (let i = 3; i < stylesArray.length - 1; i++) {
+    const index = stylesArray.indexOf("    /* Enter CSS Code Below */")
+    for (let i = index + 1; i < stylesArray.length - 1; i++) {
         styles += stylesArray[i].trim() + ' '
     }
     return styles
@@ -45,12 +42,20 @@ function setNextTask(data) {
 
     const storyline = document.getElementById('storyline')
     const challenge = document.getElementById('challenge')
-    const property = document.getElementById('property')
     const hint = document.getElementById('hint')
+
+    // change the class of the camel
+    const camelDiv = document.querySelector('.game-section').children[0]
+    const currentClass = camelDiv.classList[0]
+    camelDiv.classList.remove(currentClass)
+    camelDiv.classList.add(data.className)
+
+    const newCamel = document.querySelector(`.${data.className}`)
+
+    camel = newCamel
 
     storyline.innerText = data.storyline
     challenge.innerHTML = data.challenge
-    property.innerText = data.property
     hint.innerHTML = data.hint
 
 }
@@ -106,6 +111,9 @@ function displayPrevBtn() {
         // last item which causes next btn to be hidden
         nextBtn.classList.remove('hide')
     }
+
+    changeBackgroundColor()
+    removeHint()
 }
 
 
@@ -121,6 +129,7 @@ function displayRestartBtn() {
     restartBtn.addEventListener('click', () => {
         restartGame()
     })
+
 
 }
 
@@ -139,10 +148,24 @@ function restartGame() {
     nextBtn.classList.remove('hide')
 
     displayPrevBtn()
+    changeBackgroundColor()
 }
 
+function changeBackgroundColor() {
+    const gameSection = document.querySelector('.game-section')
+    if (currentTaskIndex >= 2) {
+        gameSection.style.backgroundColor = "#C19A6B"
+    } else {
+        gameSection.style.backgroundColor = "#000000"
+    }
+}
 
-
+function removeHint() {
+    const hint_ = document.getElementById('hint')
+    if (!hint_.classList.contains('hide')) {
+        hint_.classList.add('hide')
+    }
+}
 
 
 // --------------------------------------------- event listeners 
@@ -155,10 +178,12 @@ nextBtn.addEventListener('click', () => {
         displayRestartBtn()
         // hide next button
         nextBtn.classList.add('hide')
-    } 
+    }
     setNextGraphics(graphicsArray[currentTaskIndex])
     setNextTask(tasksArray[currentTaskIndex])
     displayPrevBtn()
+    changeBackgroundColor()
+    removeHint()
 })
 
 submitBtn.addEventListener('click', () => {

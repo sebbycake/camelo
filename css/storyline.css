@@ -1,42 +1,53 @@
 /* baby camel */
 
-.display-camel {
-    width: 50%;  
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: honeydew;
-}
-
-.open-eyes {
-    width: 50%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.display-camel img {
+.baby-camel-img {
     width: 120px;
     height: 120px;
 }
 
-.walk-right {
-
+/* display camel here */
+.display-camel, .open-eyes, .walk-left, .build-shelter, .display-grown-up-camel {
+    /* dont set the width property */
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    display: none;
 }
 
+
+/* change background color here */
+.open-eyes {
+    display: block;
+}
+
+/* walk to the right here */
+
+.walk-left {
+    display: block;
+    /* padding-right: 200px; */
+}
+
+/* build here shelter */
 .build-shelter {
-
+    display: block;
+    padding-right: 200px;
+    box-sizing: border-box;
+    /* border: 10px solid yellow; */
 }
+
 
 .display-grown-up-camel {
-
+    display: block;
+    padding-right: 200px;
+    box-sizing: border-box;
 }
 
-
-
-
+.grown-up-camel-img {
+    width: 250px;
+    height: 200px;
+}
 
 
 
@@ -51,6 +62,11 @@
     width: 50%;
     height: 100vh;
     display: flex;
+}
+
+.camel img {
+    width: 200px;
+    height: 200px;
 }
 
 .puddle {
