@@ -11,7 +11,7 @@ const tasksArray = [
   {
     storyline: "Cathy is finding it hard to see...",
     challenge: "<strong>Challenge 2: </strong>Add color to the Desert for baby Cathy!",
-    hint: "Use the <code>background-color</code> property to change its color! <i>Possible values: any colors or their corresponding hexadecimal values.</i>",
+    hint: "Use the <code>background</code> property to change its color! <i>Possible values: any colors or their corresponding hexadecimal values.</i>",
     className: 'open-eyes',
     defaultCode: ".camel {<br/>    display: block;<br/>    /* Enter CSS Code Below */<br/>}"
   },
