@@ -21,6 +21,10 @@ img {
     display: none;
 }
 
+.warning{
+    color: rgb(255, 93, 93);
+    margin-top: 10px;
+}
 
 /* code */
 
@@ -38,11 +42,16 @@ img {
     width: 85%;
 }
 
-.inner-container h1 {
+.inner-container a {
     font-size: 60px;
     font-family: 'Archivo', sans-serif;
     font-family: 'Righteous', cursive;
     color: #f9ff21;
+    text-decoration: none;
+}
+
+.inner-container a:hover {
+    color: #ffd615;
 }
 
 .inner-container p {

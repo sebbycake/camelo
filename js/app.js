@@ -1,5 +1,7 @@
 let camel = document.querySelector('.display-camel')
 
+const prevBtn = document.querySelector('.prev-btn')
+
 const submitBtn = document.querySelector('.submit-btn')
 
 const resetBtn = document.querySelector('.reset-btn')
@@ -17,13 +19,13 @@ function resetState() {
     // reset camel's inline styles
     camel.setAttribute('style', '');
     // clear existing code by user
-    const defaultCode = ".camel { \n    /* Enter CSS Code Below */\n}"
+    const defaultCode = ".camel { \n    /* Enter CSS Code Here */\n    \n}"
     editor.setValue(defaultCode);
 }
 
 function getStyles(stylesArray) {
     let styles = ''
-    const index = stylesArray.indexOf("    /* Enter CSS Code Below */")
+    const index = stylesArray.indexOf("    /* Enter CSS Code Here */")
     for (let i = index + 1; i < stylesArray.length - 1; i++) {
         styles += stylesArray[i].trim() + ' '
     }
@@ -80,8 +82,6 @@ function setNextGraphics(data) {
 
 function displayPrevBtn() {
 
-    const prevBtnExists = document.querySelector('.prev-btn')
-
     const restartBtnExists = document.querySelector('.restart-btn')
 
     if (restartBtnExists && currentTaskIndex !== tasksArray.length - 1) {
@@ -91,20 +91,7 @@ function displayPrevBtn() {
     // between second item and second last item
     if (currentTaskIndex >= 1 && currentTaskIndex < tasksArray.length - 1) {
 
-        if (!prevBtnExists) {
-            const prevBtn = document.createElement('button')
-            prevBtn.classList.add('prev-btn')
-            prevBtn.innerText = 'Previous'
-            const innerContainer = document.querySelector('.inner-container')
-            innerContainer.append(prevBtn)
-
-            prevBtn.addEventListener('click', () => {
-                currentTaskIndex--
-                setNextGraphics(graphicsArray[currentTaskIndex])
-                setNextTask(tasksArray[currentTaskIndex])
-                displayPrevBtn()
-            })
-        }
+        prevBtn.classList.remove('hide')
 
         // in case user reaches the last item, causing next btn to be hidden
         // and clicks previous, then re-display the next button
@@ -112,7 +99,7 @@ function displayPrevBtn() {
 
     } else if (currentTaskIndex === 0) {
         // remove prev btn
-        prevBtnExists && prevBtnExists.remove()
+        prevBtn.classList.add('hide')
         // display next btn in case it reaches 
         // last item which causes next btn to be hidden
         nextBtn.classList.remove('hide')
@@ -192,6 +179,13 @@ nextBtn.addEventListener('click', () => {
     displayPrevBtn()
     changeBackgroundColor()
     removeHint()
+})
+
+prevBtn.addEventListener('click', () => {
+    currentTaskIndex--
+    setNextGraphics(graphicsArray[currentTaskIndex])
+    setNextTask(tasksArray[currentTaskIndex])
+    displayPrevBtn()
 })
 
 submitBtn.addEventListener('click', () => {
