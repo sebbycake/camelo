@@ -30,7 +30,7 @@ const tasksArray = [
     defaultCode: ".camel {<br/>    display: block;<br/>    background-color: #C19A6B;<br/>    padding-right:200px;<br/>    /* Enter CSS Code Below */<br/>}"
   },
   {
-    storyline: "3 years later... Wow how time flies! Cathy the Camel has finally grown up. To our delight, with the abundance of resources, Cathy has indeed grown to be little more huge than expected",
+    storyline: "3 years later... Wow how time flies! Cathy the Camel has finally grown up. To our delight, with the abundance of resources, Cathy has indeed grown to be little more huge than expected.",
     challenge: "<strong>Challenge 5: </strong>Show the grown-up Cathy!",
     hint: "Play around with the <code>width</code> and <code>height</code> property! The magic number is 200. <i>Possible values: any number in px</i>",
     className: 'display-grown-up-camel',
@@ -39,7 +39,7 @@ const tasksArray = [
   {
     storyline: "Under the scorching sun, Cathy is growing fainter...",
     challenge: "<strong>Challenge 6: </strong>Bring Cathy the Camel to the puddle of water to quench its thirst!",
-    hint: "We will be using Flexbox property from now. Experiment with <code>justify-content</code> and <code>align-items</code> ! <i>Possible values: flex-start, flex-end, center</i>",
+    hint: "We will be using Flexbox property from now. <code>display: flex</code> is used now. Experiment with <code>justify-content</code> and <code>align-items</code> ! <i>Possible values: flex-start, flex-end, center</i>",
     className: 'camel',
     defaultCode: ".camel {<br/>    display: flex;<br/>    /* Enter Code Below */<br/>}"
   },

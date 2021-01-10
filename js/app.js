@@ -18,23 +18,23 @@ let currentTaskIndex = 0;
 function resetState() {
     // reset camel's inline styles
     camel.setAttribute('style', '');
-    // clear existing code by user
-    const defaultCode = ".camel { \n    /* Enter CSS Code Below */\n    \n    /* Enter CSS Code Above*/\n}"
-    editor.setValue(defaultCode);
+    const src_code = document.querySelector('.src-code')
+    // clear the textbox
+    src_code.value = ""
 }
+
 
 function getStyles(stylesArray) {
     let styles = ''
-    for (let i = 1; i < stylesArray.length - 1; i++) {
+    for (let i = 0; i < stylesArray.length; i++) {
         styles += stylesArray[i].trim() + ' '
     }
     return styles
 }
 
 function runCSSCode() {
-    const srcCodeArray = editor.getValue().trim().split("\n")
+    const srcCodeArray = document.querySelector('.src-code').value.split("\n")
     const stylesString = getStyles(srcCodeArray)
-    console.log(stylesString)
     if (currentTaskIndex === 1) {
         const gameSection = document.querySelector('.game-section')
         gameSection.setAttribute('style', stylesString)

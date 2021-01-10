@@ -94,13 +94,61 @@ code {
 
 /* code editor chunks */
 
-#editor {
-    margin-top: 20px;
+.code-editor {
+    margin-top: 25px;
     width: 100%;
+    background-color: #1a1b26;
+    padding: 16px;
+    border-left: 20px solid #16161e;
     height: 40vh;
-    font-size: 15px;
-    z-index: 1;
 }
+
+.existing-code {
+    color:#70a958;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.period {
+    color: #c18358;
+}
+
+.braces {
+    color: #7892b4;
+}
+
+.css-property {
+    color:#4b8bd5;
+}
+
+.css-value {
+    color: #c27b54;
+}
+
+.code-indent {
+    display: block;
+    text-indent: 35px;
+} 
+
+textarea {
+    width: calc(100% - 80px);
+    outline-style: none;
+    resize: none;
+    font-size: 16px;
+    overflow: auto;
+    font-family: 'Source Code Pro', monospace;
+    background-color:  #1a1b26;
+    background-color:  #1e202e;;
+    border:  #1a1b26;
+    color: #4b8bd5;
+
+}
+
+textarea:focus {
+    background: #1e202e;
+}
+
 
 /* submit button */
 

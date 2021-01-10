@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,25 +25,29 @@
             <div class="inner-container">
                 <a href="">Camelo</a>
                 <p id="storyline">
-                    Having wandered too far out, Cathy the Camel is lost deep in the Flaming Desert. Can you help Cathy find her way home?
+                    Having wandered too far out, Cathy the Camel is lost deep in the Flaming Desert. Can you help Cathy
+                    find her way home?
                 </p>
                 <p id="challenge">
                     <strong>Challenge 1: </strong>Make baby Cathy appear in the Flaming Desert!
                 </p>
-               <div class="hint-container">
+                <div class="hint-container">
                     <button class="hint-btn">Hint </button>
                     <p id="hint" class="hide">
-                        Note: Follow CSS Syntax: <code>selector { property: value }</code>. Use the <code>display</code> property to make Cathy appear!
+                        Note: Follow CSS Syntax: <code>selector { property: value }</code>. Use the <code>display</code>
+                        property to make Cathy appear!
                         <i>Possible values: none, block, inline, inline-block.</i>
                     </p>
-               </div>
-<div class="editor-placeholder"></div>
-<div id="editor">.camel { 
-    /* Enter CSS Code Below */
-
-    /* Enter CSS Code Above */
-}
-</div>
+                </div>
+                <div class="code-editor">
+                    <span class="existing-code"><span class="period">.</span>camel <span class="braces">{</span></span>
+                    <form class="code-indent">
+                        <textarea class="src-code" name="src-code" id="" cols="30" rows="3"
+                            placeholder="Enter CSS code here"></textarea>
+                    </form>
+                    <span class="existing-code"><span class="braces">}</span></span>
+                    </p>
+                </div>
                 <button class="submit-btn">Run Code</button>
                 <button class="reset-btn">Reset Code</button>
                 <button class="next-btn">Next</button>
@@ -53,7 +58,7 @@
 
         <div class="game-section">
             <div class="display-camel">
-                <div>   
+                <div>
                     <img class="baby-camel-img" src="./images/camel.png" alt="">
                 </div>
             </div>
@@ -65,18 +70,6 @@
         </div> <!-- end of game section-->
 
     </div> <!-- end of outer container-->
-
-    <!-- embed Ace code editor -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript"
-        charset="utf-8"></script>
-    <script>
-        const editor = ace.edit("editor");
-        // editor.setTheme("ace/theme/pastel_on_dark");
-        // editor.setTheme("ace/theme/terminal");
-        editor.setTheme("ace/theme/tomorrow_night");
-        // editor.setTheme("ace/theme/monokai")
-        editor.session.setMode("ace/mode/css");
-    </script>
 
 </body>
 
